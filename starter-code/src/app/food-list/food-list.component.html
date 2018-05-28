@@ -1,3 +1,52 @@
-<p>
-  food-list works!
-</p>
+<br>
+<div class="addfoodbutton">
+  <button type="button" (click)="onClickOpenForm()">Add New Foods</button>
+</div>
+<br>
+
+<div [hidden]="!openform">
+  <form>
+    <h1>Add New Food Info</h1>
+    <p>Name</p>
+    <input type="text" [(ngModel)]="newFood.name" name="anything"/>
+    <p>Calories</p>
+    <input type="text" [(ngModel)]="newFood.calories" name="anything"/>
+    <p>Image</p>
+    <input type="text" [(ngModel)]="newFood.image" name="anything"/>
+    <p>Quantity</p>
+    <input type="text" [(ngModel)]="newFood.quantity" name="anything"/>
+    <br><br>
+    <button type="button" (click)="addFood()">Submit</button>
+    <br>
+  </form>
+</div>
+<h1>Today's Food List</h1>
+<h2>Total Calories: {{todaysCalories}}</h2>
+<div class="foodlistposition">
+
+  <div *ngFor="let today of todaysFood" class="foodlist">
+    <li>Product: {{today.name}}</li>
+    <li>Calories: {{today.calories}}</li>
+    <li><img [src]="today.image"></li> 
+    <li>Quantity: {{today.quantity}}</li>
+  </div>
+</div>
+
+<h2>Search For Foods</h2>
+<input type="text" [(ngModel)]="searchTerm" (keyup)="filterFoods()">
+
+<h1>List of Food's</h1>
+<div class="foodlistposition">
+
+  <div *ngFor="let food of resultsArray" class="foodlist">
+    <br>
+    <li>Product: {{food.name}}</li>
+    <li>Calories: {{food.calories}}</li>
+    <li><img [src]="food.image"></li> 
+    <li>Quantity: {{food.quantity}}</li>
+    <button type="button" (click)="addTodaysFood(food)">Add to Today's Foods</button>
+    <br>
+  </div>
+</div>
+
+

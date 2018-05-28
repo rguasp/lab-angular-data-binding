@@ -1,0 +1,38 @@
+img{
+  width: 150px;
+  height: 150px;
+}
+.foodlist{
+  outline: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+  width: 200px;
+  height: 300px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+h1{
+  text-align: center;
+}
+
+form{
+  outline: 1px solid black;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+.addfoodbutton{
+  display: flex;
+  justify-content: center;
+  outline: none;
+}
+
+.foodlistposition{
+  display: flex;
+  flex-wrap: wrap;
+}
+h2{
+  text-align: center;
+}
